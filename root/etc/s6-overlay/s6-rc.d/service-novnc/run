@@ -3,7 +3,4 @@
 
 umask "${UMASK}"
 
-vnc_port=$(( 5900 + VNC_PORT_SLOT ))
-novnc_port=$(( 6080 + VNC_PORT_SLOT ))
-
-exec s6-setuidgid hotio "${APP_DIR}/utils/novnc_proxy" --vnc "${VNC_SERVER}:${vnc_port}" --listen "0.0.0.0:${novnc_port}"
+exec s6-setuidgid hotio "${APP_DIR}/utils/novnc_proxy" --vnc "${VNC_SERVER}:${VNC_PORT}" --listen "0.0.0.0:${WEBUI_PORTS%%/*}"
