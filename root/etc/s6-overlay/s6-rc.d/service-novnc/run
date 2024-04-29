@@ -1,0 +1,9 @@
+#!/command/with-contenv bash
+# shellcheck shell=bash
+
+umask "${UMASK}"
+
+readarray -td, PORTS <<< "${WEBUI_PORTS}"
+sed -i "s/0.0.0.0:6081/0.0.0.0:${PORTS[0]%%/*}/" "${APP_DIR}/nginx.conf"
+
+exec s6-setuidgid hotio nginx -c "${APP_DIR}/nginx.conf" -p "${CONFIG_DIR}" -e "error.log" -g "daemon off;pid nginx.pid;"
