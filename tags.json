@@ -2,13 +2,13 @@
   "release": {
     "description": "Releases",
     "hide": false,
-    "last_updated": "2024-06-07T16:27:12.000Z",
-    "last_updated_url": "https://github.com/hotio/novnc/actions/runs/9419994820",
+    "last_updated": "2024-06-18T12:17:10.000Z",
+    "last_updated_url": "https://github.com/hotio/novnc/actions/runs/9564796406",
     "latest": true,
     "tags": [
       "release",
-      "release-1.4.0",
-      "release-6b945de"
+      "release-1.5.0",
+      "release-284dfa4"
     ]
   }
 }
